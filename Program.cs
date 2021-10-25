@@ -3,8 +3,8 @@
 namespace CodeWarsCSharp {
     class Program {
         static void Main(string[] args) {
-            bool[] bools = {true, false,true,false,true,true };
-            Console.WriteLine(KYU8.CountSheeps(bools));
+            string lst = "2 4 7 8 10";
+            Console.WriteLine(KYU6.Test(lst));
         }
     }
 }
