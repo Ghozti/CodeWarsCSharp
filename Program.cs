@@ -3,8 +3,14 @@
 namespace CodeWarsCSharp {
     class Program {
         static void Main(string[] args) {
-            string lst = "2 4 7 8 10";
-            Console.WriteLine(KYU6.Test(lst));
+            
+            //for(int i = 0; i < KYU6.TowerBuilder(2).Length; i++)
+            //{
+            //    Console.WriteLine(KYU6.TowerBuilder(2)[i]);
+            //}
+           
+
+            KYU6.TowerBuilder(4);
         }
     }
 }

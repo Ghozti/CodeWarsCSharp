@@ -70,7 +70,7 @@ namespace CodeWarsCSharp
 
             finalStrLst = new string[size];
 
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < size; i++) 
             {
                 finalStrLst[i] = nums[i];
             }
@@ -87,5 +87,42 @@ namespace CodeWarsCSharp
             return numList;
         }
         /**************************************************************************************************/
+
+        public static string[] TowerBuilder(int nFloors)
+        {
+            string star = "";
+            string spcCount = "";
+            string[] tower = new string[nFloors];
+            string[] space = new string[nFloors];
+            string[] reverseSpace = new string[nFloors];
+
+            for(int i = 0; i < nFloors; i++)
+            { 
+                spcCount += "!";
+                space[i] = spcCount;
+            }
+
+            int currentInd = space.Length-1;
+
+            for(int i = 0; i < reverseSpace.Length; i++)
+            {
+                reverseSpace[i] = space[currentInd];
+                currentInd--;
+            }
+
+            for(int i = 0; i < nFloors; i++)
+            {
+                if (i == 0) 
+                {
+                    star = "*";
+                }
+                else
+                {
+                    star += "**";
+                }
+                tower[i] = reverseSpace[i] + star + reverseSpace[i];
+            }
+            return tower;
+        }
     }
 }
