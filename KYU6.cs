@@ -90,7 +90,6 @@ namespace CodeWarsCSharp
 
         public static string[] TowerBuilder(int nFloors)
         {
-
             if (nFloors == 0) return new string[] { };
             if (nFloors == 1) return new string[] { "*" };
             string star = "";
