@@ -90,38 +90,51 @@ namespace CodeWarsCSharp
 
         public static string[] TowerBuilder(int nFloors)
         {
+
+            if (nFloors == 0) return new string[] { };
+            if (nFloors == 1) return new string[] { "*" };
             string star = "";
             string spcCount = "";
             string[] tower = new string[nFloors];
-            string[] space = new string[nFloors];
-            string[] reverseSpace = new string[nFloors];
+            string[] space = new string[nFloors-1];
+            string[] reverseSpace = new string[nFloors-1];
 
-            for(int i = 0; i < nFloors; i++)
-            { 
-                spcCount += "!";
+            for(int i = 0; i < space.Length; i++)
+            {
+                if (i == 0) space[i] = "";
+                spcCount += " "; 
                 space[i] = spcCount;
             }
 
-            int currentInd = space.Length-1;
+            int currentInt = space.Length-1;
 
             for(int i = 0; i < reverseSpace.Length; i++)
             {
-                reverseSpace[i] = space[currentInd];
-                currentInd--;
+                reverseSpace[i] = space[currentInt];
+                currentInt--;
             }
 
-            for(int i = 0; i < nFloors; i++)
+            for(int i = 0; i < reverseSpace.Length + 1; i++)
             {
-                if (i == 0) 
-                {
-                    star = "*";
+              if(i < reverseSpace.Length)
+               {
+                    if (i == 0)
+                    {
+                        star = "*";
+                    }
+                    else
+                    {
+                        star += "**";
+                    }
+                    tower[i] = reverseSpace[i] + star + reverseSpace[i];
                 }
                 else
                 {
                     star += "**";
+                    tower[i] = star;
                 }
-                tower[i] = reverseSpace[i] + star + reverseSpace[i];
             }
+            
             return tower;
         }
     }
