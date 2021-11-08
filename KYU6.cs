@@ -154,5 +154,11 @@ namespace CodeWarsCSharp
 
             return new int[0];
         }
+
+        public static int[] nbMonths(int startPriceOld, int startPriceNew, int savingPerMonth, double percentLossByMonth)
+        {
+            // your code
+            return null;
+        }
     }
 }
