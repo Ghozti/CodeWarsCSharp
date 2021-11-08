@@ -157,7 +157,20 @@ namespace CodeWarsCSharp
 
         public static int[] nbMonths(int startPriceOld, int startPriceNew, int savingPerMonth, double percentLossByMonth)
         {
-            // your code
+            if(startPriceOld >= startPriceNew)
+            {
+                return new int[] { 0, startPriceOld - startPriceNew };
+            }
+            else
+            {
+                float currentBalance = startPriceOld;
+                int monthsPassed = 0;
+                //CODE WARS LINK: https://www.codewars.com/kata/554a44516729e4d80b000012/train/csharp
+                while (startPriceOld < startPriceNew)
+                {
+
+                }
+            }
             return null;
         }
     }
