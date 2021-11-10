@@ -163,12 +163,22 @@ namespace CodeWarsCSharp
             }
             else
             {
-                float currentBalance = startPriceOld;
+                double currentBalance = 0;
                 int monthsPassed = 0;
+                double oldCarVal = startPriceOld;
+                double newCarVal = startPriceNew;
                 //CODE WARS LINK: https://www.codewars.com/kata/554a44516729e4d80b000012/train/csharp
                 while (startPriceOld < startPriceNew)
                 {
+                    monthsPassed++;
+                    oldCarVal = oldCarVal - (oldCarVal * percentLossByMonth);
+                    newCarVal = newCarVal - (newCarVal * percentLossByMonth);
+                    currentBalance = oldCarVal + savingPerMonth;
 
+                    if(currentBalance > oldCarVal)
+                    {
+                        return new int[] { monthsPassed, (int)(currentBalance - oldCarVal) };
+                    }
                 }
             }
             return null;
