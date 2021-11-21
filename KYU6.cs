@@ -155,6 +155,8 @@ namespace CodeWarsCSharp
             return new int[0];
         }
 
+        /********************************************************************************************************************************************************************/
+
         public static int[] nbMonths(int startPriceOld, int startPriceNew, int savingPerMonth, double percentLossByMonth)
         {
             if(startPriceOld >= startPriceNew)
@@ -168,20 +170,31 @@ namespace CodeWarsCSharp
                 double oldCarVal = startPriceOld;
                 double newCarVal = startPriceNew;
                 //CODE WARS LINK: https://www.codewars.com/kata/554a44516729e4d80b000012/train/csharp
-                while (startPriceOld < startPriceNew)
+                //TODO this
+                while (currentBalance <= newCarVal)
                 {
-                    monthsPassed++;
-                    oldCarVal = oldCarVal - (oldCarVal * percentLossByMonth);
-                    newCarVal = newCarVal - (newCarVal * percentLossByMonth);
-                    currentBalance = oldCarVal + savingPerMonth;
 
-                    if(currentBalance > oldCarVal)
+                    monthsPassed++;
+                    percentLossByMonth -= .05;
+                    Console.WriteLine( oldCarVal - oldCarVal * (percentLossByMonth / 100));
+                    oldCarVal = oldCarVal - (oldCarVal * (percentLossByMonth/100));
+                    newCarVal = newCarVal - (newCarVal * (percentLossByMonth/100));
+                    currentBalance = oldCarVal + savingPerMonth;
+                    Console.WriteLine("**");
+
+                    if (currentBalance >= oldCarVal)
                     {
                         return new int[] { monthsPassed, (int)(currentBalance - oldCarVal) };
                     }
                 }
             }
             return null;
+        }
+
+        public static int[] FoldArray(int[] array, int runs)
+        {
+            
+            return new int[] { 0 };
         }
     }
 }
