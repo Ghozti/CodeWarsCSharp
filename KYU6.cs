@@ -196,33 +196,11 @@ namespace CodeWarsCSharp
             
             if(array.Length % 2 == 0)
             {
-                int[] arrayHalf1 = new int[array.Length / 2], arrayHalf2 = new int[array.Length / 2], arraySum = new int[array.Length / 2];
-                int currentInd = 0, otherSideInd = 0;
-
-                for(int i = 0; i < array.Length; i++)
-                {
-                    if (i < array.Length / 2)
-                    {
-                        arrayHalf1[currentInd] = array[i];
-                        currentInd++;
-                    }
-                    else
-                    {
-                        arrayHalf2[otherSideInd] = array[i];
-                        otherSideInd++;
-                    }
-                }
-
-                for(int i = 0; i < arraySum.Length; i++)
-                {
-                    arraySum[i] = arrayHalf1[i] + arrayHalf2[i];
-                }
-
-                return arraySum;
+                
             }
             else
             {
-
+                
             }
 
             return new int[] { 0 };
